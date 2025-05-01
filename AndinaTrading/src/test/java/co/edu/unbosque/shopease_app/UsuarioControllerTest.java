@@ -1,13 +1,10 @@
 package co.edu.unbosque.shopease_app;
 
-import co.edu.unbosque.shopease_app.controller.ProductoController;
-import co.edu.unbosque.shopease_app.controller.UsuarioController;
-import co.edu.unbosque.shopease_app.controller.UsuarioLoginRequest;
-import co.edu.unbosque.shopease_app.model.UsuarioModel;
-import co.edu.unbosque.shopease_app.service.CodigoService;
-import co.edu.unbosque.shopease_app.service.EmailService;
-import co.edu.unbosque.shopease_app.service.UsuarioService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import co.edu.unbosque.shopease_app.controller.*;
+import co.edu.unbosque.shopease_app.model.*;
+import co.edu.unbosque.shopease_app.service.*;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

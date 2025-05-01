@@ -1,5 +1,4 @@
 package co.edu.unbosque.shopease_app.controller;
-import co.edu.unbosque.shopease_app.service.EmailService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -10,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.*;
+
+import co.edu.unbosque.shopease_app.service.EmailService;
+
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +24,7 @@ public class CompraController {
     private EmailService emailService;
 
     @PostMapping("/enviar-confirmacion")
-    @Operation(summary = "Enviar Confirmación de Compra", description = "Envía un correo de confirmación de compra con los productos comprados")
+    @Operation(summary = "Enviar Confirmación de Compra", description = "Envía un correo de confirmación de compra con las acciones compradas")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Correo de confirmación enviado con éxito"),
         @ApiResponse(responseCode = "500", description = "Error al enviar el correo de confirmación")
@@ -31,7 +33,7 @@ public class CompraController {
       
             // Obtener el email y la lista de productos del JSON
             String emailCliente = (String) request.get("emailCliente");
-            List<Map<String, Object>> productosComprados = (List<Map<String, Object>>) request.get("productosComprados");
+            List<Map<String, Object>> productosComprados = (List<Map<String, Object>>) request.get("productoComprado");
 
             // Construir el contenido HTML para el correo
             StringBuilder contenidoHtml = new StringBuilder();

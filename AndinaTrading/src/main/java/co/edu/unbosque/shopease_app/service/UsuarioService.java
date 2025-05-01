@@ -1,6 +1,6 @@
 package co.edu.unbosque.shopease_app.service;
 
-import co.edu.unbosque.shopease_app.model.ProductoModel;
+import co.edu.unbosque.shopease_app.model.EmpresaModel;
 import co.edu.unbosque.shopease_app.model.UsuarioModel;
 import co.edu.unbosque.shopease_app.repository.UsuarioRepository;
 import org.slf4j.Logger;
@@ -29,5 +29,9 @@ public class UsuarioService {
 
 	public UsuarioModel findByEmail(String email) {
 		return usuarioRepository.findByEmail(email);
+	}
+
+	public UsuarioModel findById(int id) {
+		return usuarioRepository.findById(id);
 	}
 }

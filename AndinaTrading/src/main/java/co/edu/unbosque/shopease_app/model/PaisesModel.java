@@ -13,15 +13,17 @@ import lombok.ToString;
 @Getter
 @Setter
 
-@Table(name="categorias")
-public class CategoriaModel {
+@Table(name="paises")
+public class PaisesModel {
 
     @Id
     @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_categoria;
+    private int id;
 
     @NotNull(message = "El nombre de la categoría no puede ser nulo")
     private String nombre;
+
+    private String situacion_economica;
 
 }

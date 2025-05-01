@@ -36,8 +36,6 @@ public class UsuarioModel {
 
 	private String direccion;
 
-	private String usuario;
-
 	@Column(nullable = false)
 	private String contraseña;
 

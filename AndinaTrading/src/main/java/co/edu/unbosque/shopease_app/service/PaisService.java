@@ -1,7 +1,7 @@
 package co.edu.unbosque.shopease_app.service;
 
-import co.edu.unbosque.shopease_app.model.CategoriaModel;
-import co.edu.unbosque.shopease_app.repository.CategoriaRepository;
+import co.edu.unbosque.shopease_app.model.PaisesModel;
+import co.edu.unbosque.shopease_app.repository.PaisesRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,22 +12,22 @@ import java.util.List;
 
 
 @Service
-public class CategoriaService {
+public class PaisService {
 
-    private final Logger logger = LoggerFactory.getLogger(CategoriaModel.class);
+    private final Logger logger = LoggerFactory.getLogger(PaisesModel.class);
     @Autowired
-    private CategoriaRepository categoriaRepository;
+    private PaisesRepository categoriaRepository;
 
 
-    public CategoriaModel saveCategoria(CategoriaModel categorias) {
+    public PaisesModel saveCategoria(PaisesModel categorias) {
 
-        CategoriaModel categoriaModel = categoriaRepository.save(categorias);
+        PaisesModel categoriaModel = categoriaRepository.save(categorias);
         return categoriaModel;
     }
 
-    public CategoriaModel updateCategoria(int id, CategoriaModel categoria) {
+    public PaisesModel updateCategoria(int id, PaisesModel categoria) {
         if (categoriaRepository.existsById(id)) {
-            categoria.setId_categoria(id);
+            categoria.setId(id);
             return categoriaRepository.save(categoria);
         } else {
             return null;
@@ -44,7 +44,7 @@ public class CategoriaService {
         }
     }
 
-    public List<CategoriaModel> findAll(){
+    public List<PaisesModel> findAll(){
         return categoriaRepository.findAll();
     }
 
