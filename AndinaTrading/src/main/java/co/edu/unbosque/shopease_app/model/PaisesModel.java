@@ -21,7 +21,31 @@ public class PaisesModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull(message = "El nombre de la categoría no puede ser nulo")
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getSituacion_economica() {
+		return situacion_economica;
+	}
+
+	public void setSituacion_economica(String situacion_economica) {
+		this.situacion_economica = situacion_economica;
+	}
+
+	@NotNull(message = "El nombre de la categoría no puede ser nulo")
     private String nombre;
 
     private String situacion_economica;

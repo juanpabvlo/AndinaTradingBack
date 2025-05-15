@@ -121,7 +121,7 @@ public class UsuarioController {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("El usuario no fue encontrado");
 		}
 
-		if (passwordEncoder.matches(loginRequest.getContraseña(), usuario.getContraseña())) {
+		if (passwordEncoder.matches(loginRequest.getContraseña(), (String) usuario.getContraseña())) {
 			return ResponseEntity.ok("Inicio de sesión exitoso");
 		} else {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email y/o contraseña incorrectos");
