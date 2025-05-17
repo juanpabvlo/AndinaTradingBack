@@ -1,6 +1,5 @@
 package co.edu.unbosque.shopease_app.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -15,7 +14,6 @@ import lombok.Setter;
 public class CiudadModel {
 
     @Id
-    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 

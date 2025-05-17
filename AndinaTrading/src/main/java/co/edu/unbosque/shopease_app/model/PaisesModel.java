@@ -17,7 +17,6 @@ import lombok.ToString;
 public class PaisesModel {
 
     @Id
-    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
