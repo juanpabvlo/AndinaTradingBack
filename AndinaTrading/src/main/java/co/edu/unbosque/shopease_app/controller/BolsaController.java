@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import co.edu.unbosque.shopease_app.dto.AccionHistoricaDTO;
-import co.edu.unbosque.shopease_app.service.BolsaService;
 import co.edu.unbosque.shopease_app.dto.HistorialPorEmpresaDTO;
+import co.edu.unbosque.shopease_app.model.PrecioEmpresaModel;
+import co.edu.unbosque.shopease_app.service.BolsaService;
 
 @RestController
 @CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080", "*" })
@@ -23,18 +24,29 @@ public class BolsaController {
     private BolsaService bolsaService;
 
     @GetMapping("/precios-top")
-    @Operation(summary = "Precios de empresas top", description = "Obtiene los precios de las acciones de las principales empresas del mercado")
+    @Operation(summary = "Obtener y guardar precios de empresas top", description = "Obtiene y guarda en BD los precios de las principales acciones del mercado")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Consulta exitosa"),
-        @ApiResponse(responseCode = "500", description = "Error al consultar los precios")
+        @ApiResponse(responseCode = "200", description = "Precios obtenidos y guardados exitosamente"),
+        @ApiResponse(responseCode = "500", description = "Error al consultar o guardar los precios")
     })
-    public ResponseEntity<String> obtenerPreciosTopEmpresas() {
-        String respuesta = bolsaService.obtenerPreciosTopEmpresas();
+    public ResponseEntity<String> obtenerYGuardarPreciosTopEmpresas() {
+        String respuesta = bolsaService.obtenerYGuardarPreciosTopEmpresas();
         return ResponseEntity.ok(respuesta);
     }
 
+    @GetMapping("/precios-guardados")
+    @Operation(summary = "Consultar precios guardados", description = "Consulta todos los precios guardados de empresas ordenados por fecha descendente")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Consulta exitosa"),
+        @ApiResponse(responseCode = "500", description = "Error al consultar la base de datos")
+    })
+    public ResponseEntity<List<PrecioEmpresaModel>> consultarPreciosGuardados() {
+        List<PrecioEmpresaModel> precios = bolsaService.consultarPreciosGuardados();
+        return ResponseEntity.ok(precios);
+    }
+
     @GetMapping("/historial")
-    @Operation(summary = "Historial de precios", description = "Obtiene los precios históricos de una acción para graficar su variación")
+    @Operation(summary = "Historial de precios de una acción", description = "Obtiene los precios históricos de una acción para graficar su variación")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Consulta exitosa"),
         @ApiResponse(responseCode = "500", description = "Error al consultar el historial")
@@ -44,17 +56,14 @@ public class BolsaController {
         return ResponseEntity.ok(historial);
     }
 
-
-
-@GetMapping("/historial-top")
-@Operation(summary = "Historial de empresas top", description = "Obtiene el historial de precios de las 8 empresas principales")
-@ApiResponses(value = {
-    @ApiResponse(responseCode = "200", description = "Consulta exitosa"),
-    @ApiResponse(responseCode = "500", description = "Error al consultar el historial")
-})
-public ResponseEntity<List<HistorialPorEmpresaDTO>> obtenerHistorialTopEmpresas() {
-    List<HistorialPorEmpresaDTO> historiales = bolsaService.obtenerHistorialTopEmpresas();
-    return ResponseEntity.ok(historiales);
-}
-
+    @GetMapping("/historial-top")
+    @Operation(summary = "Historial de empresas top", description = "Obtiene el historial de precios de las 8 empresas principales")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Consulta exitosa"),
+        @ApiResponse(responseCode = "500", description = "Error al consultar el historial")
+    })
+    public ResponseEntity<List<HistorialPorEmpresaDTO>> obtenerHistorialTopEmpresas() {
+        List<HistorialPorEmpresaDTO> historiales = bolsaService.obtenerHistorialTopEmpresas();
+        return ResponseEntity.ok(historiales);
+    }
 }
