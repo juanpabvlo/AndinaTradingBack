@@ -43,10 +43,6 @@ public class UsuarioModel {
 
 	private Date fecha_registro;
 
-	public CharSequence getContraseña() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public int getId_usuario() {
 		return id_usuario;
