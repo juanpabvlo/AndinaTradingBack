@@ -40,9 +40,10 @@ public class UsuarioModel {
 
 	private int id_rol;
 
-	private Date fecha_registro;
 
+	private Date fecha_registro;		
 
+	
 	public int getId_usuario() {
 		return id_usuario;
 	}
@@ -110,4 +111,9 @@ public class UsuarioModel {
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
+
+	public String getContraseña() {
+		return contraseña;
+	}
+	
 }
