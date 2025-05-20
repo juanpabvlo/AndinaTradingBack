@@ -3,6 +3,8 @@ package co.edu.unbosque.shopease_app.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
@@ -27,6 +29,10 @@ public class InversionistaModel {
     private double saldo;
 
     private double saldo_anterior;
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private UsuarioModel usuario;
 
     public int getId_inversionista() {
         return id_inversionista;
