@@ -13,6 +13,6 @@ public class GlobalCorsConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:4200") // origen del frontend
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // incluye OPTIONS
                 .allowedHeaders("*")
-                .allowCredentials(true); // si usas cookies/sesiones
+                .allowCredentials(true);           
     }
 }

@@ -17,7 +17,7 @@ import java.util.List;
 
 
 @Transactional
-@CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080", "*" })
+@CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080" })
 @RestController
 @RequestMapping("/Paises")
 public class PaisesController {

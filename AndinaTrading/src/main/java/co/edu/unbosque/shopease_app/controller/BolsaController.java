@@ -16,7 +16,7 @@ import co.edu.unbosque.shopease_app.model.PrecioEmpresaModel;
 import co.edu.unbosque.shopease_app.service.BolsaService;
 
 @RestController
-@CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080", "*" })
+@CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080" })
 @RequestMapping("/bolsa")
 public class BolsaController {
 
