@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 @Transactional
-@CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080", "*" })
+@CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080" })
 @RestController
 @RequestMapping("/Empresa")
 public class EmpresaController {

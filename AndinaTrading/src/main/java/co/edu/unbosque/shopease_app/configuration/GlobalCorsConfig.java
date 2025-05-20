@@ -12,7 +12,7 @@ public class GlobalCorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**") // aplica a todas las rutas
                 .allowedOrigins("http://localhost:4200") // origen del frontend
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // incluye OPTIONS
-                .allowedHeaders("*")
-                .allowCredentials(true); // si usas cookies/sesiones
+                .allowedHeaders("*");
+             
     }
 }
