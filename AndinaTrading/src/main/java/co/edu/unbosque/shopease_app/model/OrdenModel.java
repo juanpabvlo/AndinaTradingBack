@@ -15,6 +15,9 @@ public class OrdenModel {
     @Column(name = "id_inversionista")
     private int idInversionista;
 
+    @Column(name = "id_comisionista")
+    private int idComisionista;
+
     @Column(name = "id_empresa")
     private int idEmpresa;
 
@@ -27,6 +30,8 @@ public class OrdenModel {
     private Double precioAccion;
 
     private Double total;
+    @Column(name = "comision")
+    private double comision;
 
     @Column(name = "fecha_creacion")
     private LocalDateTime fechaCreacion;
@@ -87,4 +92,37 @@ public class OrdenModel {
     public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
     }
+
+    public int getIdComisionista() {
+        return idComisionista;
+    }
+
+    public void setIdComisionista(int idComisionista) {
+        this.idComisionista = idComisionista;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public double getComision() {
+        return comision;
+    }
+
+    public void setComision(double comision) {
+        this.comision = comision;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public void getComision(double comision) {
+        this.comision = comision;
+    }
+
+    public void setComision(int comision) {
+        this.comision = total * 0.01;
+    }
+
 }

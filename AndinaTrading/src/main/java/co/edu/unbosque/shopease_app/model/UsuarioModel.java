@@ -4,7 +4,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,6 +39,7 @@ public class UsuarioModel {
 	private String contraseña;
 
 	private int id_rol;
+
 
 	private Date fecha_registro;		
 
