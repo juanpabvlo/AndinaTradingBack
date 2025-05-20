@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Transactional
-@CrossOrigin(origins = { "http://localhost:8090", "http://localhost:8080", "*" })
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:8080"})
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
