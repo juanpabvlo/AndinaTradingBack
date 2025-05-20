@@ -16,7 +16,6 @@ import lombok.ToString;
 public class EmpresaModel {
 
     @Id
-    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 

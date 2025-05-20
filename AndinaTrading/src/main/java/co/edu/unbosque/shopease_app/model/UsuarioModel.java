@@ -16,12 +16,12 @@ import java.sql.Date;
 @Getter
 @Setter
 @ToString
-@Table(name="usuarios")
+@Table(name = "usuarios")
 public class UsuarioModel {
 
 	@Id
 	private int id_usuario;
-//prueba
+	// prueba
 	@Column(nullable = false)
 	private String nombre;
 
@@ -40,10 +40,8 @@ public class UsuarioModel {
 
 	private int id_rol;
 
+	private Date fecha_registro;
 
-	private Date fecha_registro;		
-
-	
 	public int getId_usuario() {
 		return id_usuario;
 	}
@@ -115,5 +113,5 @@ public class UsuarioModel {
 	public String getContraseña() {
 		return contraseña;
 	}
-	
+
 }
